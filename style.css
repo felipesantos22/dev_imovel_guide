@@ -1,0 +1,45 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: #1B2653;
+  color: beige;
+  padding: 20px;
+}
+
+.menu {
+  display: flex; /* Exibe o conteúdo da lista como flexbox */
+  justify-content: space-between; /* Espaça os grupos de menu uniformemente */
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-group {
+  display: flex; /* Exibe o conteúdo dos grupos como flexbox */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+}
+
+.nav-group li {
+  margin-right: 20px; /* Adiciona espaçamento entre os itens */
+}
+
+.nav-group li:last-child {
+  margin-right: 0; /* Remove o espaçamento após o último item */
+}
+
+.nav-group a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: white;
+  font-weight: bold;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
