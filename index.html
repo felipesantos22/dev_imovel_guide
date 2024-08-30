@@ -89,7 +89,6 @@
 
     <section class="cards">
       <!-- Card 1 -->
-      <!-- Card 1 -->
       <div class="card1">
         <div style="display: flex; align-items: center; margin-bottom: 10px">
           <img
@@ -201,34 +200,39 @@
       <div class="card2">
         <h4 class="mb-4">Mande uma mensagem</h4>
 
-        <div class="mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="cpfInput"
-            placeholder="Digite seu CPF"
-          />
-        </div>
+        <form id="messageForm">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="cpfInput"
+              placeholder="Digite seu CPF"
+              required
+            />
+          </div>
 
-        <div class="mb-3">
-          <input
-            type="tel"
-            class="form-control"
-            id="telefoneInput"
-            placeholder="Digite seu telefone"
-          />
-        </div>
+          <div class="mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="telefoneInput"
+              placeholder="Digite seu telefone"
+              required
+            />
+          </div>
 
-        <div class="mb-3">
-          <textarea
-            class="form-control"
-            id="mensagemTextarea"
-            rows="3"
-            placeholder="Digite sua mensagem"
-          ></textarea>
-        </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              id="mensagemTextarea"
+              rows="3"
+              placeholder="Digite sua mensagem"
+              required
+            ></textarea>
+          </div>
 
-        <button id="enviarBtn" class="button">Enviar Mensagem</button>
+          <button id="enviarBtn" class="button">Enviar Mensagem</button>
+        </form>
       </div>
 
       <!-- Card 3 -->
@@ -243,6 +247,7 @@
               id="valor1Input"
               placeholder="60"
             />
+            <hr />
             <input
               type="number"
               class="form-control"
@@ -250,7 +255,6 @@
               placeholder="100"
             />
           </div>
-
           <!-- Linha 2: Dois campos de input lado a lado -->
           <div class="input-row">
             <input
@@ -260,6 +264,7 @@
               placeholder="30"
             />
             <input
+              style="border: 2px solid #fe6613"
               type="text"
               class="form-control"
               id="resultadoInput"
@@ -368,13 +373,30 @@
     <script>
       // Card 2
       $(document).ready(function () {
+        // Máscaras para os campos
         $("#cpfInput").mask("000.000.000-00");
         $("#telefoneInput").mask("(00) 00000-0000");
-      });
 
-      $(document).ready(function () {
-        $("#enviarBtn").click(function () {
-          alert("Mensagem enviada com sucesso!");
+        // Evento de clique no botão de enviar
+        $("#enviarBtn").click(function (event) {
+          // Impede o envio padrão do formulário para validação personalizada
+          event.preventDefault();
+
+          // Seleciona o formulário
+          var form = $("#messageForm")[0];
+
+          // Verifica se o formulário é válido
+          if (form.checkValidity()) {
+            // Se o formulário for válido, exibe o alerta
+            alert("Mensagem enviada com sucesso!");
+
+            // Após o alerta, submete o formulário
+            form.submit();
+          } else {
+            // Se o formulário não for válido, exibe o alerta de erro padrão
+            // O navegador exibirá automaticamente mensagens de erro para campos obrigatórios
+            form.reportValidity();
+          }
         });
       });
 
