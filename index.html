@@ -89,8 +89,8 @@
 
     <section class="cards">
       <!-- Card 1 -->
+      <!-- Card 1 -->
       <div class="card1">
-        <!-- Card 1 -->
         <div style="display: flex; align-items: center; margin-bottom: 10px">
           <img
             src="./img/mulher.jpg"
@@ -105,7 +105,13 @@
           <div>
             <h5 style="margin: 0; padding-left: 10px">Marcia</h5>
             <p>3.000 Pontos</p>
-            <a href="" style="color: #fe6613">ver telefone</a>
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modalMarcia"
+              style="color: #fe6613"
+              >ver telefone</a
+            >
           </div>
         </div>
 
@@ -113,7 +119,7 @@
         <div style="display: flex; align-items: center">
           <img
             src="./img/man.jpg"
-            alt="Marcia"
+            alt="Marcos"
             style="
               margin: 15px;
               width: 160px;
@@ -124,7 +130,69 @@
           <div>
             <h5 style="margin: 0; padding-left: 10px">Marcos</h5>
             <p>1.200 Pontos</p>
-            <a href="" style="color: #fe6613">ver telefone</a>
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modalMarcos"
+              style="color: #fe6613"
+              >ver telefone</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Marcia -->
+      <div
+        class="modal fade"
+        id="modalMarcia"
+        tabindex="-1"
+        aria-labelledby="modalMarciaLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalMarciaLabel">
+                Telefone de Marcia
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Telefone: (11) 12345-6789</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Marcos -->
+      <div
+        class="modal fade"
+        id="modalMarcos"
+        tabindex="-1"
+        aria-labelledby="modalMarcosLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalMarcosLabel">
+                Telefone de Marcos
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Telefone: (11) 98765-4321</p>
+            </div>
           </div>
         </div>
       </div>
