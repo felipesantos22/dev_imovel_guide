@@ -327,8 +327,6 @@
             justify-content: center;
           "
         >
-          <!-- Botão para capturar e baixar a imagem -->
-
           <button class="button4" id="downloadBtn">Download</button>
         </div>
       </div>
@@ -436,14 +434,14 @@
             // Cria um elemento de link para fazer o download da imagem
             var link = document.createElement("a");
             link.href = imageURL;
-            link.download = "image.png"; // Nome do arquivo de imagem para download
+            link.download = "image-with-button.png"; // Nome do arquivo de imagem para download
 
             // Adiciona o link ao DOM e clica nele para iniciar o download
-            $("body").append(link);
+            document.body.appendChild(link);
             link.click();
 
             // Remove o link do DOM após o download
-            $(link).remove();
+            document.body.removeChild(link);
           });
         });
       });
