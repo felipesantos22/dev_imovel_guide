@@ -5,9 +5,112 @@
 .custom-button {
   background-color: transparent;
   color: white;
-  border: 2px solid white; /* Adiciona uma borda branca */
-  border-radius: 25px; /* Define as margens arredondadas */
-  padding: 10px 20px; /* Ajusta o espaçamento interno do botão */
-  font-size: 12px; /* Define o tamanho da fonte */
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 12px;
   margin-left: 30px;
+}
+
+.cards {
+  display: flex; /* Flex container para layout horizontal */
+  flex-wrap: wrap; /* Permite que os cards "quebrem" para a próxima linha */
+  gap: 100px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza os cards no container */
+  padding: 40px; /* Espaçamento interno do container */
+  color: #787878;
+}
+
+.card1 {
+  width: 350px; /* Largura fixa para o card */
+  height: 350px; /* Altura fixa para o card */
+  border: 2px solid #e4dbdb; /* Borda preta */
+  border-radius: 3px; /* Raio de borda de 3px */
+  display: flex; /* Flexbox para centralizar conteúdo */
+  flex-direction: column;
+}
+
+.card2 {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 20px;
+  width: 350px; /* Ajuste conforme necessário */
+  height: 350px;
+  margin: auto; /* Centraliza o card na tela */
+  border: 2px solid #e4dbdb; /* Borda preta */
+}
+
+.button {
+  background-color: #fe6613; /* Cor laranja */
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.card3 {
+  border-radius: 3px;
+  border: 2px solid #e4dbdb; /* Borda cinza */
+  padding: 20px;
+  width: 350px; /* Ajuste conforme necessário */
+  height: 350px;
+  margin: auto; /* Centraliza o card na tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o espaço entre os elementos */
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+.input-row {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os inputs */
+  width: 100%; /* Para garantir que os inputs estejam dentro da largura do card */
+  justify-content: center; /* Centraliza os inputs horizontalmente */
+}
+
+.input-row input {
+  flex: 1; /* Faz os inputs ocuparem o mesmo espaço */
+  max-width: 150px; /* Ajuste conforme necessário */
+}
+
+.button2 {
+  background-color: #fe6613; /* Cor laranja */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-right: 75%;
+}
+
+.card4 {
+  width: 350px; /* Largura fixa para o card */
+  height: 350px; /* Altura fixa para o card */
+  border: 2px solid #e4dbdb; /* Borda preta */
+  border-radius: 3px; /* Raio de borda de 3px */
+  display: flex; /* Flexbox para centralizar conteúdo */
+  flex-direction: column;
+}
+
+.button3 {
+  width: 350px;
+  background-color: #fe6613; /* Cor laranja */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.card5,
+.card6 {
+  width: 350px; /* Largura fixa para o card */
+  height: 350px; /* Altura fixa para o card */
+  border: 2px solid #e4dbdb; /* Borda preta */
+  border-radius: 3px; /* Raio de borda de 3px */
+  display: flex; /* Flexbox para centralizar conteúdo */
+  align-items: center; /* Alinha o conteúdo no centro verticalmente */
+  justify-content: center; /* Alinha o conteúdo no centro horizontalmente */
+}
+
+/* Ajuste para o conteúdo do card */
+.card-body {
+  text-align: center; /* Centraliza o texto */
 }
