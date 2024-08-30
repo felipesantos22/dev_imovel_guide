@@ -372,86 +372,58 @@
     <script>
       // Card 2
       $(document).ready(function () {
-        // Máscaras para os campos
+        // Card 2
         $("#cpfInput").mask("000.000.000-00");
         $("#telefoneInput").mask("(00) 00000-0000");
 
-        // Evento de clique no botão de enviar
         $("#enviarBtn").click(function (event) {
-          // Impede o envio padrão do formulário para validação personalizada
           event.preventDefault();
 
-          // Seleciona o formulário
           var form = $("#messageForm")[0];
 
-          // Verifica se o formulário é válido
           if (form.checkValidity()) {
-            // Se o formulário for válido, exibe o alerta
             alert("Mensagem enviada com sucesso!");
-
-            // Após o alerta, submete o formulário
             form.submit();
           } else {
-            // Se o formulário não for válido, exibe o alerta de erro padrão
-            // O navegador exibirá automaticamente mensagens de erro para campos obrigatórios
             form.reportValidity();
           }
         });
-      });
 
-      // Card 3
-      $(document).ready(function () {
+        // Card 3
         $("#calcularBtn").on("click", function () {
-          // Capturar os valores dos inputs
           var valor1 = parseFloat($("#valor1Input").val());
           var valor2 = parseFloat($("#valor2Input").val());
           var valor3 = parseFloat($("#valor3Input").val());
 
-          // Verificar se os valores são válidos
           if (!isNaN(valor1) && !isNaN(valor2) && !isNaN(valor3)) {
-            // Calcular o resultado da regra de três
             var resultado = (valor2 * valor3) / valor1;
-
-            // Exibir o resultado no campo de resultado
             $("#resultadoInput").val(resultado.toFixed(2));
           } else {
             alert("Por favor, insira valores válidos em todos os campos.");
           }
         });
-      });
 
-      // Card 5
-      $(document).ready(function () {
+        // Card 5
         $("#downloadBtn").on("click", function () {
-          // Captura o elemento que queremos salvar como imagem
-          var element = $("#imageToDownload")[0]; // jQuery para selecionar o elemento
+          var element = $("#imageToDownload")[0];
 
-          // Usa html2canvas para capturar o elemento como um canvas
           html2canvas(element).then(function (canvas) {
-            // Converte o canvas para uma imagem de dados em URL
             var imageURL = canvas.toDataURL("image/png");
 
-            // Cria um elemento de link para fazer o download da imagem
             var link = document.createElement("a");
             link.href = imageURL;
-            link.download = "image.png"; // Nome do arquivo de imagem para download
+            link.download = "image.png";
 
-            // Adiciona o link ao DOM e clica nele para iniciar o download
             $("body").append(link);
             link.click();
-
-            // Remove o link do DOM após o download
             $(link).remove();
           });
         });
-      });
 
-      // Card 6
-      $(document).ready(function () {
-        // Espera um pequeno delay antes de adicionar a classe de zoom
+        // Card 6
         setTimeout(function () {
           $(".card6 img").addClass("zoom-in");
-        }, 500); // 500 ms de delay antes de aplicar o zoom
+        }, 500);
       });
     </script>
   </body>
