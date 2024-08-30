@@ -40,6 +40,12 @@
   border: 2px solid #e4dbdb; /* Borda preta */
 }
 
+.form-control {
+  max-width: 100%; /* Ajusta a largura máxima do textarea */
+  max-height: 100px; /* Ajusta a altura máxima do textarea */
+  resize: vertical; /* Permite o redimensionamento vertical */
+}
+
 .button {
   background-color: #fe6613; /* Cor laranja */
   color: white;
