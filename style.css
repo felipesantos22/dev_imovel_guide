@@ -99,7 +99,22 @@
   margin-bottom: 20px;
 }
 
-.card5,
+.card5 {
+  width: 350px; /* Largura fixa para o card */
+  height: 350px; /* Altura fixa para o card */
+  border: 2px solid #e4dbdb; /* Borda preta */
+  border-radius: 3px; /* Raio de borda de 3px */
+}
+
+.button4 {
+  width: 200px;
+  background-color:#FE6613; /* Cor laranja */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
 .card6 {
   width: 350px; /* Largura fixa para o card */
   height: 350px; /* Altura fixa para o card */

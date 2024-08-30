@@ -25,6 +25,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <title>Imovel Guide</title>
   </head>
   <body>
@@ -240,16 +242,20 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="card5">
-        <div class="card-body">
-          <img
-            src="./img/woman.jpg"
-            class="img-fluid rounded-circle"
-            alt="Isabela"
-            style="width: 100px; height: 100px"
-          />
-          <h5 class="card-title">Isabela</h5>
-          <p class="card-text">1.800 Pontos</p>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div class="card5" id="imageToDownload">
+          <img src="./img/house.jpg" style="width: 347px; height: 347px" />
+        </div>
+        <div
+          style="
+            margin-top: 10px;
+            width: 347px;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <!-- Botão para capturar e baixar a imagem -->
+          <button class="button4" id="downloadBtn">Download</button>
         </div>
       </div>
 
@@ -299,6 +305,32 @@
           } else {
             alert("Por favor, insira valores válidos em todos os campos.");
           }
+        });
+      });
+
+      // Card 5
+      $(document).ready(function () {
+        $("#downloadBtn").on("click", function () {
+          // Captura o elemento que queremos salvar como imagem
+          var element = $("#imageToDownload")[0]; // jQuery para selecionar o elemento
+
+          // Usa html2canvas para capturar o elemento como um canvas
+          html2canvas(element).then(function (canvas) {
+            // Converte o canvas para uma imagem de dados em URL
+            var imageURL = canvas.toDataURL("image/png");
+
+            // Cria um elemento de link para fazer o download da imagem
+            var link = document.createElement("a");
+            link.href = imageURL;
+            link.download = "image.png"; // Nome do arquivo de imagem para download
+
+            // Adiciona o link ao DOM e clica nele para iniciar o download
+            $("body").append(link);
+            link.click();
+
+            // Remove o link do DOM após o download
+            $(link).remove();
+          });
         });
       });
     </script>
