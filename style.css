@@ -96,6 +96,20 @@
   flex-direction: column;
 }
 
+.buttond {
+  position: absolute;
+  top: 130%; /* Ajuste conforme necessário */
+  left: 50%; /* Ajuste conforme necessário */
+  transform: translate(-50%, -50%); /* Centraliza o botão no meio da imagem */
+  z-index: 10; /* Garante que o botão fique sobre a imagem */
+  background-color: rgba(254, 102, 19, 0.5); /* Fundo semi-transparente laranja #FE6613 */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão do botão */
+  padding: 5px 80px; /* Espaçamento interno do botão */
+  border-radius: 3px; /* Bordas arredondadas (opcional) */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
 .button3 {
   width: 350px;
   background-color: #fe6613; /* Cor laranja */
