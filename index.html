@@ -261,16 +261,7 @@
 
       <!-- Card 6 -->
       <div class="card6">
-        <div class="card-body">
-          <img
-            src="./img/man.jpg"
-            class="img-fluid rounded-circle"
-            alt="João"
-            style="width: 100px; height: 100px"
-          />
-          <h5 class="card-title">João</h5>
-          <p class="card-text">2.900 Pontos</p>
-        </div>
+        <img src="./img/house.jpg" style="width: 347px; height: 347px" />
       </div>
     </section>
 
@@ -332,6 +323,14 @@
             $(link).remove();
           });
         });
+      });
+
+      // Card 6
+      $(document).ready(function () {
+        // Espera um pequeno delay antes de adicionar a classe de zoom
+        setTimeout(function () {
+          $(".card6 img").addClass("zoom-in");
+        }, 500); // 500 ms de delay antes de aplicar o zoom
       });
     </script>
   </body>

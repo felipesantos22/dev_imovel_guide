@@ -125,6 +125,20 @@
   justify-content: center; /* Alinha o conteúdo no centro horizontalmente */
 }
 
+/* Estilo inicial da imagem */
+.card6 img {
+  width: 347px;
+  height: 347px;
+  transition: transform 2s ease; /* Duração e suavização da transição */
+  transform: scale(1); /* Tamanho inicial */
+}
+
+/* Estilo de zoom na imagem */
+.zoom-in {
+  transform: scale(1.2); /* Tamanho após o zoom */
+}
+
+
 /* Ajuste para o conteúdo do card */
 .card-body {
   text-align: center; /* Centraliza o texto */
