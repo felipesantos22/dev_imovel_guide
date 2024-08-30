@@ -126,22 +126,23 @@
   height: 350px; /* Altura fixa para o card */
   border: 2px solid #e4dbdb; /* Borda preta */
   border-radius: 3px; /* Raio de borda de 3px */
-  display: flex; /* Flexbox para centralizar conteúdo */
-  align-items: center; /* Alinha o conteúdo no centro verticalmente */
-  justify-content: center; /* Alinha o conteúdo no centro horizontalmente */
+  overflow: hidden; /* Esconde o que passar da borda */
+  position: relative; /* Posicionamento relativo para ajustar a imagem */ 
 }
 
-/* Estilo inicial da imagem */
 .card6 img {
-  width: 347px;
-  height: 347px;
-  transition: transform 2s ease; /* Duração e suavização da transição */
-  transform: scale(1); /* Tamanho inicial */
+  width: 100%; /* Ajusta a largura da imagem ao contêiner */
+  height: 100%; /* Ajusta a altura da imagem ao contêiner */
+  animation: zoomEffect 2s forwards; /* Animação de zoom */
 }
 
-/* Estilo de zoom na imagem */
-.zoom-in {
-  transform: scale(1.2); /* Tamanho após o zoom */
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1); /* Tamanho inicial */
+  }
+  100% {
+    transform: scale(1.2); /* Zoom para 120% */
+  }
 }
 
 
