@@ -149,3 +149,8 @@
 .card-body {
   text-align: center; /* Centraliza o texto */
 }
+
+.footer-custom {
+  max-width: 1920px; /* Ajuste conforme necessário */
+  margin: auto; /* Centraliza o rodapé horizontalmente */
+}
