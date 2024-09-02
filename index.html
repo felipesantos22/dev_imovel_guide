@@ -317,10 +317,17 @@
 
       <!-- Card 5 -->
       <div style="display: flex; flex-direction: column; align-items: center">
-        <div class="card5" id="imageToDownload">
+        <!-- Contêiner que contém a imagem e o botão -->
+        <div
+          class="card5"
+          id="imageToDownload"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
           <img src="./img/house.jpg" style="width: 347px; height: 347px" />
+          <button class="buttond" style="margin-top: 10px">Imovel Guide</button>
         </div>
-        <!-- <button class="buttond" id="downloadBtn">Imovel Guide</button> -->
+
+        <!-- Botão para baixar a imagem -->
         <div
           style="
             margin-top: 10px;
@@ -407,18 +414,23 @@
 
         // Card 5
         $("#downloadBtn").on("click", function () {
+          // Seleciona o contêiner que contém a imagem e o botão que queremos capturar
           var element = $("#imageToDownload")[0];
 
+          // Usa o html2canvas para capturar o contêiner como uma imagem
           html2canvas(element).then(function (canvas) {
+            // Converte o canvas em uma URL de dados de imagem no formato PNG
             var imageURL = canvas.toDataURL("image/png");
 
-            var link = document.createElement("a");
-            link.href = imageURL;
-            link.download = "image.png";
+            // Cria um elemento de link usando jQuery para o download
+            var $link = $("<a>")
+              .attr("href", imageURL)
+              .attr("download", "captura.png")
+              .appendTo("body"); // Adiciona o link temporariamente ao body
 
-            $("body").append(link);
-            link.click();
-            $(link).remove();
+            $link[0].click(); // Dispara o evento de clique para baixar a imagem
+
+            $link.remove(); // Remove o link após o clique
           });
         });
 
