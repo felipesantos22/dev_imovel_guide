@@ -66,6 +66,13 @@
   align-items: center;
 }
 
+.divider-hr {
+  flex-grow: 0.5; 
+  margin: 10 10px; 
+  border: none; 
+  border-top: 2px solid black;
+}
+
 .input-row {
   display: flex;
   gap: 10px;
