@@ -414,23 +414,15 @@
 
         // Card 5
         $("#downloadBtn").on("click", function () {
-          // Seleciona o contêiner que contém a imagem e o botão que queremos capturar
           var element = $("#imageToDownload")[0];
-
-          // Usa o html2canvas para capturar o contêiner como uma imagem
           html2canvas(element).then(function (canvas) {
-            // Converte o canvas em uma URL de dados de imagem no formato PNG
             var imageURL = canvas.toDataURL("image/png");
-
-            // Cria um elemento de link usando jQuery para o download
             var $link = $("<a>")
               .attr("href", imageURL)
               .attr("download", "captura.png")
-              .appendTo("body"); // Adiciona o link temporariamente ao body
-
-            $link[0].click(); // Dispara o evento de clique para baixar a imagem
-
-            $link.remove(); // Remove o link após o clique
+              .appendTo("body");
+            $link[0].click();
+            $link.remove();
           });
         });
 
